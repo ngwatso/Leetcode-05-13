@@ -15,10 +15,7 @@ class Solution:
             else:
                 continue
 
-        return -1
-                    
-                
-                
+        return -1         
         
 '''
 
@@ -41,3 +38,6 @@ P:
 iterate through list forwards and backwards, sum indexes, once sums are the same, give remaining index.  If no solution, return -1
 
 '''
+
+# =========================================
+
