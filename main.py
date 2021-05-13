@@ -41,3 +41,39 @@ iterate through list forwards and backwards, sum indexes, once sums are the same
 
 # =========================================
 
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        
+        carry = 1
+
+        for i, num in enumerate(digits):
+            j = -(i+1)
+            while j >= len(digits) * -1 and j != 0:
+                if digits[j] == 9 and carry == 1:
+                    digits[j] = 0
+                    carry = 1
+                else:
+                    digits[j] = digits[j] + carry
+                    carry = 0
+                j -= 1
+            if carry == 1:
+                digits.insert(0, 1)
+                return digits
+            else:
+                return digits
+        
+'''
+
+U:
+
+[1, 2, 3]
+output = [1, 2, 4]
+
+[9, 9]
+output = [1, 0, 0]
+
+P:
+
+create carry variable, set at 1, iterate in reverse through list, adding carry to i.  if i = 10, set i to 0 and carry to 1.  If i = 0 and carry = 1, insert carry at i = 0.
+
+'''
